@@ -1,0 +1,2 @@
+rootProject.name='MyTransactions'
+include ':app'

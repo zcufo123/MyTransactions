@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1645091787862.xml" value="0.33" />
+        <entry key="../../../../layout/compose-model-1645213071615.xml" value="0.21875" />
+        <entry key="../../../../layout/compose-model-1645384304243.xml" value="0.21484375" />
+        <entry key="../../../../layout/compose-model-1645431619584.xml" value="0.228515625" />
+        <entry key="../../../../layout/compose-model-1645565722020.xml" value="0.212890625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/detail_fragment.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/item_character.xml" value="0.33242753623188404" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.3522727272727273" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
