@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.example.mytransactions.presentation.main.MainFragment"
+        android:name="com.example.mytransactions.presentation.main.TransactionListFragment"
         android:label="Main"
-        tools:layout="@layout/main_fragment" >
+        tools:layout="@layout/transaction_list_fragment" >
     </fragment>
 
 </navigation>

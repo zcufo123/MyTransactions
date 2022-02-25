@@ -3,7 +3,7 @@ package com.example.mytransactions
 import androidx.lifecycle.MutableLiveData
 import com.example.mytransactions.data.model.Transaction
 import com.example.mytransactions.domain.TransactionListUseCase
-import com.example.mytransactions.presentation.main.MainViewModel
+import com.example.mytransactions.presentation.main.TransactionListViewModel
 import com.example.mytransactions.utils.Resource
 import org.junit.Before
 import org.junit.Test
@@ -14,8 +14,9 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class MainViewModelTest {
-    lateinit var mainViewModel: MainViewModel
+class TransactionListViewModelTest {
+
+    lateinit var transactionListViewModel: TransactionListViewModel
 
     @Mock
     private lateinit var transactionListUseCase: TransactionListUseCase
@@ -23,7 +24,7 @@ class MainViewModelTest {
     @Before
     fun setup() {
         MockitoAnnotations.openMocks(this).close()
-        mainViewModel = MainViewModel(transactionListUseCase)
+        transactionListViewModel = TransactionListViewModel(transactionListUseCase)
     }
 
     @Test
@@ -31,8 +32,8 @@ class MainViewModelTest {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.SUCCESS, transactionList, null)))
-        assert(mainViewModel.transactions.value?.status == Resource.Status.SUCCESS)
-        assert(mainViewModel.transactions.value?.data.isNullOrEmpty())
+        assert(transactionListViewModel.transactions.value?.status == Resource.Status.SUCCESS)
+        assert(transactionListViewModel.transactions.value?.data.isNullOrEmpty())
     }
 
     @Test
@@ -40,8 +41,8 @@ class MainViewModelTest {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.ERROR, transactionList, null)))
-        assert(mainViewModel.transactions.value?.status == Resource.Status.ERROR)
-        assert(mainViewModel.transactions.value?.data.isNullOrEmpty())
+        assert(transactionListViewModel.transactions.value?.status == Resource.Status.ERROR)
+        assert(transactionListViewModel.transactions.value?.data.isNullOrEmpty())
     }
 
     @Test
@@ -49,8 +50,8 @@ class MainViewModelTest {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.LOADING, transactionList, null)))
-        assert(mainViewModel.transactions.value?.status == Resource.Status.LOADING)
-        assert(mainViewModel.transactions.value?.data.isNullOrEmpty())
+        assert(transactionListViewModel.transactions.value?.status == Resource.Status.LOADING)
+        assert(transactionListViewModel.transactions.value?.data.isNullOrEmpty())
     }
 
     @Test
@@ -60,8 +61,8 @@ class MainViewModelTest {
         )
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.SUCCESS, transactionList, null)))
-        assert(mainViewModel.transactions.value?.status == Resource.Status.SUCCESS)
-        val transaction = mainViewModel.transactions.value?.data?.get(0)
+        assert(transactionListViewModel.transactions.value?.status == Resource.Status.SUCCESS)
+        val transaction = transactionListViewModel.transactions.value?.data?.get(0)
         assert(transaction!!.id == 1)
         assert(transaction.transactionDate == "2021-08-31T15:47:10")
         assert(transaction.summary == "Hackett, Stamm and Kuhn")

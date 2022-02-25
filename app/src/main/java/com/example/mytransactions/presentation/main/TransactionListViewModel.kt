@@ -7,7 +7,7 @@ import com.example.mytransactions.data.model.Transaction
 import com.example.mytransactions.domain.TransactionListUseCase
 import com.example.mytransactions.utils.Resource
 
-class MainViewModel @ViewModelInject constructor(
+class TransactionListViewModel @ViewModelInject constructor(
     private val transactionListUseCase: TransactionListUseCase
 ) : ViewModel() {
 

@@ -5,20 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.mytransactions.databinding.MainFragmentBinding
+import com.example.mytransactions.databinding.TransactionListFragmentBinding
 import com.example.mytransactions.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : Fragment() {
+class TransactionListFragment : Fragment() {
 
-    private var binding: MainFragmentBinding by autoCleared()
+    private var binding: TransactionListFragmentBinding by autoCleared()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = MainFragmentBinding.inflate(inflater, container, false)
+        binding = TransactionListFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
