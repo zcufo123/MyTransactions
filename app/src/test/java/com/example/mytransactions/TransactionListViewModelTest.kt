@@ -28,7 +28,7 @@ class TransactionListViewModelTest {
     }
 
     @Test
-    fun entitiesTestSuccess() {
+    fun testSuccess() {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.SUCCESS, transactionList, null)))
@@ -37,7 +37,7 @@ class TransactionListViewModelTest {
     }
 
     @Test
-    fun entitiesTestError() {
+    fun testError() {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.ERROR, transactionList, null)))
@@ -46,7 +46,7 @@ class TransactionListViewModelTest {
     }
 
     @Test
-    fun entitiesTestLoading() {
+    fun testLoading() {
         val transactionList = listOfNotNull(null)
         Mockito.`when`(transactionListUseCase.getTransactions())
             .thenReturn(MutableLiveData(Resource(Resource.Status.LOADING, transactionList, null)))
@@ -55,7 +55,7 @@ class TransactionListViewModelTest {
     }
 
     @Test
-    fun entitiesTestSuccessWithOneEntity() {
+    fun testSuccessWithOneEntity() {
         val transactionList = listOfNotNull(
             Transaction(1, "2021-08-31T15:47:10", "Hackett, Stamm and Kuhn", 9379.55, 0.0)
         )

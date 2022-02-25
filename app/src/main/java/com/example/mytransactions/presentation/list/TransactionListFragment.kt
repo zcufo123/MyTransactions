@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mytransactions.R
 import com.example.mytransactions.databinding.TransactionListFragmentBinding
+import com.example.mytransactions.utils.Constant
 import com.example.mytransactions.utils.Resource
 import com.example.mytransactions.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +42,10 @@ class TransactionListFragment : Fragment() {
     private fun setupRecyclerView() {
         adapter = TransactionListAdapter(object : TransactionListAdapter.ItemListener {
             override fun onClicked(id: Int) {
-                //TODO
+                findNavController().navigate(
+                    R.id.action_listFragment_to_detailFragment,
+                    bundleOf(Constant.ID to id)
+                )
             }
         })
         binding.mainRv.layoutManager = LinearLayoutManager(requireContext())
