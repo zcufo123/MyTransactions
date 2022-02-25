@@ -9,7 +9,7 @@ class TransactionListUseCase @Inject constructor(private val repository: Transac
     fun getTransactions() = performGetOperation(
         databaseQuery = { repository.getLocalTransactions() },
         networkCall = { repository.getRemoteTransactions() },
-        saveCallResult = { repository.saveTransactions(it.transactionList) }
+        saveCallResult = { repository.saveTransactions(it) }
     )
 
 }

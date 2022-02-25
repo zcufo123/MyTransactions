@@ -1,4 +1,4 @@
-package com.example.mytransactions.presentation.main
+package com.example.mytransactions.presentation.list
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData

@@ -3,7 +3,7 @@ package com.example.mytransactions
 import androidx.lifecycle.MutableLiveData
 import com.example.mytransactions.data.model.Transaction
 import com.example.mytransactions.domain.TransactionListUseCase
-import com.example.mytransactions.presentation.main.TransactionListViewModel
+import com.example.mytransactions.presentation.list.TransactionListViewModel
 import com.example.mytransactions.utils.Resource
 import org.junit.Before
 import org.junit.Test
